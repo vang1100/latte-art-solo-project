@@ -21,7 +21,34 @@ router.get('/', function(req, res) {
  * POST route template
  */
 router.post('/', (req, res) => {
-  // POST route code here
-});
+    // console.log('req.body', req.body);
+ 
+     const eventName = req.body.event_name;
+     const address = req.body.address;
+     const city = req.body.city;
+     const state = req.body.state;
+     const zipCode = req.body.zip_code;
+     const date = req.body.date;
+     const time = req.body.time;
+  
+ 
+     const queryText = `
+                     INSERT INTO "event"
+                         ("event_name", "address", "zip_code", "city", "state", "date", "time")
+                     VALUES
+                         ($1, $2, $3, $4, $5, $6, $7);
+                     
+                     `;
+
+     pool.query(queryText, [eventName, address, city, state, zipCode, date, time])
+     .then(result => {
+         console.log('database insert resposnse successful', result);
+         res.sendStatus(201);
+     })
+     .catch(error => {
+         console.log('database insert response failed', error);
+         res.sendStatus(500);
+     });
+ });
 
 module.exports = router;
