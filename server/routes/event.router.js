@@ -51,4 +51,24 @@ router.post('/', (req, res) => {
      });
  });
 
+ // PUT
+
+ // DELETE
+
+ router.delete('/:id', (req, res) => {
+  //  console.log('delete this', req.params.id);
+
+   const deleteId = req.params.id
+   const queryText = 'DELETE FROM "event" WHERE "id" = $1;';
+
+   pool.query(queryText,[deleteId])
+   .then((response) => {
+    console.log('delete ID susccessful. event Id: ', response);
+    res.sendStatus(200);
+   })
+   .catch((error) => {
+    console.log('error in router delete for event id', error);
+    res.sendStatus(500);
+   });
+ });
 module.exports = router;
