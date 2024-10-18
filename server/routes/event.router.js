@@ -52,6 +52,30 @@ router.post('/', (req, res) => {
  });
 
  // PUT
+ router.put('/edit/:id', (req, res) => {
+    const { id } = req.params;
+    const { event_name, address, zip_code, city, state, date, time } = req.body;
+  
+    const sqlText = `
+      UPDATE "event" 
+      SET "event_name" = $1, "address" = $2, "zip_code" = $3, "city" = $4, "state" = $5, "date" = $6, "time" = $7
+      WHERE "id" = $8;
+    `;
+  
+    const values = [event_name, address, zip_code, city, state, date, time, id];
+  
+    pool.query(sqlText, values)
+      .then((result) => {
+        console.log(`Updated event in the database`, result);
+        res.sendStatus(200);
+      })
+      .catch((error) => {
+        console.log(`Error making database query ${sqlText}`, error);
+        res.sendStatus(500); // Good server always responds
+      });
+  });
+
+
 
  // DELETE
 
