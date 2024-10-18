@@ -7,3 +7,16 @@ CREATE TABLE "user" (
     "username" VARCHAR (80) UNIQUE NOT NULL,
     "password" VARCHAR (1000) NOT NULL
 );
+CREATE TABLE "chatbox" (
+	"id" SERIAL PRIMARY KEY,
+	"comment" VARCHAR (300),
+	"date" DATE,
+	"user_id" INT REFERENCES "user"
+);
+
+CREATE TABLE "chatbox" (
+	"id" SERIAL PRIMARY KEY,
+	"comment" VARCHAR (300),
+	"date" DATE,
+	"user_id" INT REFERENCES "user"
+);
