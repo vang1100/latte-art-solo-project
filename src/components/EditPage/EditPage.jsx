@@ -1,9 +1,16 @@
+import Eventlist from "../EventList/EventList";
+import EditForm from "../EditForm/EditForm";
 function EditPage(){
+
+
     return(
         <>
         <h2>List of events</h2>
-        <h3>Each event will have an edit button and delete button</h3>
+        <Eventlist />
+        <button>EDIT</button> <button>DELETE</button>
         <h2>When edit button is clicked, it will toggle to an edit form</h2>
+        <EditForm />
+        
         </>
     )
 }

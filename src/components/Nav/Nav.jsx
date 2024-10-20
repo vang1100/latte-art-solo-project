@@ -40,6 +40,10 @@ function Nav() {
               Create
             </Link>
 
+            <Link className="navLink" to="/map">
+              Coffee Map
+            </Link>
+
             <LogOutButton className="navLink" />
           </>
         )}

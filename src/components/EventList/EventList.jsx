@@ -26,7 +26,6 @@ function Eventlist(){
 
     return(
         <>
-        YOUR UPCOMING EVENTS!
         <ul>
             {event.map((event) => 
                     <li key={event.id}>

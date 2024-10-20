@@ -4,6 +4,7 @@ import Chatbox
 function HomePage(){
     return(
         <>
+         YOUR UPCOMING EVENTS!
         <Eventlist/>
         <br/>
         <br/>
