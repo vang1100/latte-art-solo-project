@@ -8,7 +8,8 @@ const router = express.Router();
 router.get('/', (req, res) => {
   // GET route code here
   //console.log('get router for chatbox');
-  let queryText = 'SELECT * FROM "chatbox";';
+  let queryText = `SELECT "comment", "date", "username" FROM "chatbox"
+JOIN "user" ON "user"."id" = "chatbox"."user_id";`;
 
   pool.query(queryText)
   .then((result) => {

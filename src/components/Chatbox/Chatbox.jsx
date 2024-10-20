@@ -1,24 +1,49 @@
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import axios from 'axios';
+import { useSelector, useDispatch} from 'react-redux';
 
 function Chatbox(){
+    const dispatch = useDispatch();
 
     const [comment, setComment] = useState('');
     const [date, setDate] = useState('');
+    const [user, setUser] = useState('');
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log('adding comment test');
+        console.log('adding comment test', {comment}, {date}, {user});
 
-        axios.post('/api/chatbox', {comment: comment, date: date})
+        axios.post('/api/chatbox', {comment: comment, date: date, userId: user})
         .then((result) => {
             setComment('');
             setDate('');
+            setUser('');
         })
         .catch((error) => {
             console.log('error in post chatbox', error);
         })
     };
+
+  
+
+    const getChatbox = () => {
+        axios.get("/api/chatbox")
+        .then((response) => {
+            dispatch({
+                type:"CHATBOX_SET",
+                payload: response.data,
+            });
+        })
+        .catch((error) =>{
+        console.log('error in fetching chatbox data', error);
+    });
+};
+
+useEffect(() => {
+getChatbox();
+}, []);
+
+    const chatbox = useSelector(store => store.chatboxReducer);
 
     return(
         <>
@@ -43,7 +68,16 @@ function Chatbox(){
         <button type="submit">Submit</button>
         </form>
 
-        <h3>Comments will appear down here</h3>
+        <h3>CHATBOX</h3>
+
+        <ul>
+            {chatbox.map((chatbox) =>
+            <li key={chatbox.id}>
+                <h5>{chatbox.username} on {chatbox.date}</h5>
+                <p>{chatbox.comment}</p>
+                <br/>     
+            </li>)}
+        </ul>
        
         </>
 
