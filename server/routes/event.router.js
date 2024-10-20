@@ -53,8 +53,16 @@ router.post('/', (req, res) => {
 
  // PUT
  router.put('/edit/:id', (req, res) => {
+    // console.log("this is req.params", req.params);
+    // console.log("this is req.body", req.body.city);
     const { id } = req.params;
-    const { event_name, address, zip_code, city, state, date, time } = req.body;
+    const event_name = req.body.event_name;
+    const address = req.body.address;
+    const zip_code = req.body.zip_code;
+    const city = req.body.city;
+    const state = req.body.state;
+    const date = req.body.date;
+    const time = req.body.time;
   
     const sqlText = `
       UPDATE "event" 
@@ -62,9 +70,9 @@ router.post('/', (req, res) => {
       WHERE "id" = $8;
     `;
   
-    const values = [event_name, address, zip_code, city, state, date, time, id];
+
   
-    pool.query(sqlText, values)
+    pool.query(sqlText, [event_name, address, zip_code, city, state, date, time, id])
       .then((result) => {
         console.log(`Updated event in the database`, result);
         res.sendStatus(200);

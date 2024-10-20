@@ -14,9 +14,15 @@ CREATE TABLE "chatbox" (
 	"user_id" INT REFERENCES "user"
 );
 
-CREATE TABLE "chatbox" (
+CREATE TABLE "event" (
 	"id" SERIAL PRIMARY KEY,
-	"comment" VARCHAR (300),
+	"event_name" VARCHAR (30),
+	"address" VARCHAR (40),
+	"city" VARCHAR (30), 
+	"state" VARCHAR (5),
+	"zip_code" INTEGER,
 	"date" DATE,
+	"time" TIME,
 	"user_id" INT REFERENCES "user"
-);
+	);
+	

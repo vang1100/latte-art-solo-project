@@ -13,14 +13,18 @@ import Footer from '../Footer/Footer';
 
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 
-import AboutPage from '../AboutPage/AboutPage';
+//import AboutPage from '../AboutPage/AboutPage';
 import UserPage from '../UserPage/UserPage';
-import InfoPage from '../InfoPage/InfoPage';
+//import InfoPage from '../InfoPage/InfoPage';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
+import EditPage from '../EditPage/EditPage';
+import CreatePage from '../CreatePage/CreatePage';
+import HomePage from '../HomePage/HomePage';
 
 import './App.css';
+import { END } from 'redux-saga';
 
 function App() {
   const dispatch = useDispatch();
@@ -40,13 +44,13 @@ function App() {
           <Redirect exact from="/" to="/home" />
 
           {/* Visiting localhost:5173/about will show the about page. */}
-          <Route
+          {/* <Route
             // shows AboutPage at all times (logged in or not)
             exact
             path="/about"
           >
             <AboutPage />
-          </Route>
+          </Route> */}
 
           {/* For protected routes, the view could show one of several things on the same route.
             Visiting localhost:5173/user will show the UserPage if the user is logged in.
@@ -63,9 +67,23 @@ function App() {
           <ProtectedRoute
             // logged in shows InfoPage else shows LoginPage
             exact
-            path="/info"
+            path="/homepage"
           >
-            <InfoPage />
+            <HomePage />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            exact
+            path="/edit"
+          >
+            <EditPage/>
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            exact
+            path="/create"
+            >
+            <CreatePage/>
           </ProtectedRoute>
 
           <Route
