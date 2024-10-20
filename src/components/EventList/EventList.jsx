@@ -5,6 +5,7 @@ import { useSelector, useDispatch} from 'react-redux';
 function Eventlist(){
 
     const dispatch = useDispatch();
+    const event = useSelector(store => store.eventReducer);
 
     const getEvents = () => {
         axios.get('/api/event')
@@ -25,7 +26,19 @@ function Eventlist(){
 
     return(
         <>
-        hi. event list should appear here
+        YOUR UPCOMING EVENTS!
+        <ul>
+            {event.map((event) => 
+                    <li key={event.id}>
+                        {event.event_name}
+                        <br/>
+                        {event.address} {event.city}, {event.state} {event.zip_code}
+                        <br/>
+                        {event.date}
+
+                    </li>)
+            }
+        </ul>
         </>
     )
 }

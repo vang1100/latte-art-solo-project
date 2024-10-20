@@ -47,7 +47,7 @@ getChatbox();
 
     return(
         <>
-        Chatbox form and chatbox data
+        SEND A MESSAGE TO YOUR FRIENDS!
        <form onSubmit={handleSubmit}>
         <input 
             placeholder="comment"
@@ -68,7 +68,7 @@ getChatbox();
         <button type="submit">Submit</button>
         </form>
 
-        <h3>CHATBOX</h3>
+        CHATBOX
 
         <ul>
             {chatbox.map((chatbox) =>
