@@ -54,7 +54,7 @@ function GoogleMap(){
     return (
         <>
             <APIProvider apiKey={'AIzaSyDgopZ8mN53DI30W1dnvoGV0-4SOUtl1XY'}>
-      <div style={{ height: '60vh', width: '80%' }}>
+      <div style={{ height: '60vh', width: '100%' }}>
         <Map
           defaultCenter={{  lat: 44.953566588994356,lng: -93.08970548193398}}
           defaultZoom={12}

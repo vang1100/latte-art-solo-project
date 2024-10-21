@@ -26,21 +26,21 @@ function Chatbox(){
 
   
 
-    const getChatbox = () => {
-        axios.get("/api/chatbox")
-        .then((response) => {
-            dispatch({
-                type:"CHATBOX_SET",
-                payload: response.data,
-            });
-        })
-        .catch((error) =>{
-        console.log('error in fetching chatbox data', error);
-    });
-};
+//     const getChatbox = () => {
+//         axios.get("/api/chatbox")
+//         .then((response) => {
+//             dispatch({
+//                 type:"CHATBOX_SET",
+//                 payload: response.data,
+//             });
+//         })
+//         .catch((error) =>{
+//         console.log('error in fetching chatbox data', error);
+//     });
+// };
 
 useEffect(() => {
-getChatbox();
+dispatch({ type: 'FETCH_CHATBOX'})
 }, []);
 
     const chatbox = useSelector(store => store.chatboxReducer);
@@ -73,7 +73,7 @@ getChatbox();
         <ul>
             {chatbox.map((chatbox) =>
             <li key={chatbox.id}>
-                <h5>{chatbox.username} on {chatbox.date}</h5>
+                <h5>{chatbox.username}  {chatbox.date}</h5>
                 <p>{chatbox.comment}</p>
                 <br/>     
             </li>)}

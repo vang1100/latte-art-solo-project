@@ -1,5 +1,5 @@
 const chatboxReducer = (state = [], action) => {
-if (action.type === 'CHATBOX_SET') {
+if (action.type === 'SET_CHATBOX') {
     return action.payload;
 }
     return state;
