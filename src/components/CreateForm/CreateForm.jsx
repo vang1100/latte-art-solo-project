@@ -1,16 +1,12 @@
-function EditForm(){
+function CreateForm(){
 
-    const editEvent = (event) => {
-        event.preventDefault();
-        console.log('PUT to edit form');
-    };
-
-    //DELETE FUNCTION
-
-
+    const addEvent = () => {
+        console.log('add event')
+    }
     return (
         <>
-        <form onSubmit={editEvent}>
+        <form onSubmit={addEvent}>
+        
         <input placeholder="date of event" type="calendar"></input>
         <input placeholder="time of event" type="time"></input>
         <input placeholder="coffee shop name"></input>
@@ -21,9 +17,8 @@ function EditForm(){
         
         <button type="submit">MAKE CHANGES</button>
         </form>
-
         </>
     )
 }
 
-export default EditForm;
+export default CreateForm;

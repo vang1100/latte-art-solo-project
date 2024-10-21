@@ -1,12 +1,12 @@
 import GoogleMap from "../GoogleMap/GoogleMap";
+import CreateForm from "../CreateForm/CreateForm";
 
 function CreatePage(){
     return(
         <>
-        <GoogleMap />
-        <p>Google map will be here</p>
-        
-        <h3>A form will be shown below</h3>
+        <GoogleMap />   
+        CREATE AN EVENT!
+        <CreateForm />
         </>
     )
 }
