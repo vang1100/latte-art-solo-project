@@ -5,10 +5,14 @@ import { useSelector, useDispatch} from 'react-redux';
 function Chatbox(){
     const dispatch = useDispatch();
 
+    useEffect(() => {
+        dispatch({ type: 'FETCH_CHATBOX'})
+        }, []);
+
     const [comment, setComment] = useState('');
     const [date, setDate] = useState('');
     const [user, setUser] = useState('');
-
+  
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log('adding comment test', {comment}, {date}, {user});
@@ -18,6 +22,8 @@ function Chatbox(){
             setComment('');
             setDate('');
             setUser('');
+            //how to fetch chatbox??
+            //how to add the user id?
         })
         .catch((error) => {
             console.log('error in post chatbox', error);
@@ -39,9 +45,7 @@ function Chatbox(){
 //     });
 // };
 
-useEffect(() => {
-dispatch({ type: 'FETCH_CHATBOX'})
-}, []);
+
 
     const chatbox = useSelector(store => store.chatboxReducer);
 

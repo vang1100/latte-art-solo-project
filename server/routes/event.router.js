@@ -30,11 +30,11 @@ router.post('/', (req, res) => {
      const zipCode = req.body.zip_code;
      const date = req.body.date;
      const time = req.body.time;
-  
+    // user id??
  
      const queryText = `
                      INSERT INTO "event"
-                         ("event_name", "address", "zip_code", "city", "state", "date", "time")
+                         ("event_name", "address", "city", "state", "zip_code", "date", "time")
                      VALUES
                          ($1, $2, $3, $4, $5, $6, $7);
                      
