@@ -30,17 +30,17 @@ router.post('/', (req, res) => {
      const zipCode = req.body.zip_code;
      const date = req.body.date;
      const time = req.body.time;
-    // user id??
+    const user = req.user.id;
  
      const queryText = `
                      INSERT INTO "event"
-                         ("event_name", "address", "city", "state", "zip_code", "date", "time")
+                         ("event_name", "address", "city", "state", "zip_code", "date", "time", "user_id")
                      VALUES
-                         ($1, $2, $3, $4, $5, $6, $7);
+                         ($1, $2, $3, $4, $5, $6, $7, $8);
                      
                      `;
 
-     pool.query(queryText, [eventName, address, city, state, zipCode, date, time])
+     pool.query(queryText, [eventName, address, city, state, zipCode, date, time, user])
      .then(result => {
          console.log('database insert resposnse successful', result);
          res.sendStatus(201);

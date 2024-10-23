@@ -78,7 +78,7 @@ function Chatbox(){
             {chatbox.map((chatbox) =>
             
             <li key={chatbox.id}>
-               <h4>{chatbox.username} on {chatbox.date.slice(0, 10)}</h4> 
+               <h4>{chatbox.username} posted on {chatbox.date.slice(0, 10)}</h4>
                 <p>{chatbox.comment}</p>
                 
             </li>)}
