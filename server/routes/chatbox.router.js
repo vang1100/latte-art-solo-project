@@ -28,7 +28,7 @@ router.post('/', (req, res) => {
 
     const comment= req.body.comment;
     const date = req.body.date;
-    const userId = req.body.user_id;
+    const userId = req.user.id;
 
     const queryText = `
     INSERT INTO "chatbox"

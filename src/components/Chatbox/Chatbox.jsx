@@ -15,9 +15,9 @@ function Chatbox(){
   
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log('adding comment test', {comment}, {date}, {user});
+        console.log('adding comment test', {comment}, {date});
 
-        axios.post('/api/chatbox', {comment: comment, date: date, userId: user})
+        axios.post('/api/chatbox', {comment: comment, date: date})
         .then((result) => {
             setComment('');
             setDate('');
@@ -76,10 +76,11 @@ function Chatbox(){
 
         <ul>
             {chatbox.map((chatbox) =>
+            
             <li key={chatbox.id}>
-                <h5>{chatbox.username}  {chatbox.date}</h5>
+               <h4>{chatbox.username} on {chatbox.date.slice(0, 10)}</h4> 
                 <p>{chatbox.comment}</p>
-                <br/>     
+                
             </li>)}
         </ul>
        
