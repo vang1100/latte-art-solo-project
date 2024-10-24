@@ -5,13 +5,13 @@ import Chatbox
 function HomePage(){
     return(
         <>
-         YOUR UPCOMING EVENTS!
+        <h3>YOUR UPCOMING EVENTS!</h3> 
         <Eventlist/>
         <br/>
         <br/>
-        <br/>
-        <Chatbox />
         <ChatboxForm />
+        <Chatbox />
+        
         </>
        
     )

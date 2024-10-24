@@ -29,11 +29,17 @@ function Eventlist(){
         <ul>
             {event.map((event) => 
                     <li key={event.id}>
+                        
+                        <h4>
                         {event.event_name}
                         <br/>
                         {event.address} {event.city}, {event.state} {event.zip_code}
                         <br/>
-                        {event.date}
+                        {event.date.slice(0, 10)}
+                        <br/>
+                        <br/>
+
+                        </h4>
 
                     </li>)
             }

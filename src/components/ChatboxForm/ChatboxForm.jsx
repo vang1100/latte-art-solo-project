@@ -29,7 +29,7 @@ function ChatboxForm(){
     };
     return (
         <>
-          SEND A MESSAGE TO YOUR FRIENDS!
+         <h3>SEND A MESSAGE TO YOUR FRIENDS!</h3> 
        <form onSubmit={handleSubmit}>
         <input 
             placeholder="comment"
