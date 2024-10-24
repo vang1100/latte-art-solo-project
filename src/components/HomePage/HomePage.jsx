@@ -1,6 +1,7 @@
 import Eventlist from "../EventList/EventList";
 import Chatbox
  from "../Chatbox/Chatbox";
+ import ChatboxForm from "../ChatboxForm/ChatboxForm";
 function HomePage(){
     return(
         <>
@@ -10,6 +11,7 @@ function HomePage(){
         <br/>
         <br/>
         <Chatbox />
+        <ChatboxForm />
         </>
        
     )

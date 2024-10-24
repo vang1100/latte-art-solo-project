@@ -1,5 +1,5 @@
-import {useState, useEffect} from 'react';
-import axios from 'axios';
+import { useEffect} from 'react';
+
 import { useSelector, useDispatch} from 'react-redux';
 
 function Eventlist(){

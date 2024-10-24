@@ -28,7 +28,7 @@ router.post('/', (req, res) => {
 
     const comment= req.body.comment;
     const date = req.body.date;
-    const userId = req.user.id;
+    const user = req.user.id;
 
     const queryText = `
     INSERT INTO "chatbox"
@@ -37,7 +37,7 @@ router.post('/', (req, res) => {
         ($1, $2, $3);
     
     `;
-pool.query(queryText, [comment, date, userId])
+pool.query(queryText, [comment, date, user])
 .then(result => {
 console.log('database insert resposnse successful', result);
 res.sendStatus(201);
