@@ -35,7 +35,10 @@ function Eventlist(){
                         <br/>
                         {event.address} {event.city}, {event.state} {event.zip_code}
                         <br/>
-                        {event.date.slice(0, 10)}
+                        {event.date.slice(0, 10)} 
+                        <br/>
+                        <button>Edit</button>
+                        <button onClick={() => dispatch({type: 'DELETE_EVENT', payload: event.id})}>Delete</button>
                         <br/>
                         <br/>
 

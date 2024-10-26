@@ -18,8 +18,28 @@ function* fetchEvent(){
     }
 }
 
+// function to delete
+
+function* deleteEvent(action){
+    try {
+       yield axios.delete(`/api/event/${action.payload}`);
+       yield put({type: 'FETCH_EVENT' });
+    } catch (error) {
+        console.log('error in deleting event -saga ', error);
+    }
+
+}
+
+// function to update event
+
+function editEvent(){
+
+}
+
+
 function* fetchEventSaga(){
     yield takeEvery('FETCH_EVENT', fetchEvent);
+    yield takeEvery('DELETE_EVENT', deleteEvent);
 }
 
 export default fetchEventSaga;
