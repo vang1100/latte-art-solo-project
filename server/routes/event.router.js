@@ -52,7 +52,7 @@ router.post('/', (req, res) => {
  });
 
  // PUT
- router.put('/edit/:id', (req, res) => {
+ router.put('/:id', (req, res) => {
     // console.log("this is req.params", req.params);
     // console.log("this is req.body", req.body.city);
     const { id } = req.params;

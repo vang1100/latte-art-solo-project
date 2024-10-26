@@ -1,5 +1,5 @@
 import { useEffect} from 'react';
-
+import { Link } from 'react-router-dom';
 import { useSelector, useDispatch} from 'react-redux';
 
 function Eventlist(){
@@ -37,7 +37,7 @@ function Eventlist(){
                         <br/>
                         {event.date.slice(0, 10)} 
                         <br/>
-                        <button>Edit</button>
+                       <Link to='/edit'><button>Edit</button></Link> 
                         <button onClick={() => dispatch({type: 'DELETE_EVENT', payload: event.id})}>Delete</button>
                         <br/>
                         <br/>

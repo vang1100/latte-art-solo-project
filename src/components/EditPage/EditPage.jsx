@@ -1,15 +1,27 @@
-import Eventlist from "../EventList/EventList";
-import EditForm from "../EditForm/EditForm";
+import { useEffect, useState} from 'react';
+import { useSelector, useDispatch} from 'react-redux';
+import EventItem from '../EventItem/EventItem';
 function EditPage(){
+
+    const dispatch = useDispatch();
+    const event = useSelector(store => store.eventReducer);
+
+  
+    useEffect(() => {
+        dispatch({ type: 'FETCH_EVENT'});
+    }, []);
 
 
     return(
         <>
-        <h2>List of events</h2>
-        <Eventlist />
-        <button>EDIT</button> <button>DELETE</button>
-        <h2>When edit button is clicked, it will toggle to an edit form</h2>
-        <EditForm />
+        <h2>List of events to edit</h2>
+        <ul>
+            {event.map((event) => 
+            <EventItem key={event.id} event={event}/>
+                  )
+            }
+        </ul>
+    
         
         </>
     )

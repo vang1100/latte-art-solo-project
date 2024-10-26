@@ -1,25 +1,50 @@
+import { useEffect, useState} from 'react';
+import { useSelector, useDispatch} from 'react-redux';
+
 function EditForm(){
 
-    const editEvent = (event) => {
-        event.preventDefault();
-        console.log('PUT to edit form');
-    };
+    const dispatch = useDispatch();
+    const event = useSelector(store => store.eventReducer);
 
-    //DELETE FUNCTION
+    const [eventName, setEventName] = useState('');
+    const [time, setTime] = useState('');
+    const [date, setDate] = useState('');
+    const [address, setAddress] = useState('');
+    const [city, setCity] = useState('');
+    const [state, setState] = useState('');
+    const [zipCode, setZipCode] = useState('');
 
+    const makeEdit = (e) => {
+        e.preventDefault();
+        dispatch({type: 'EDIT_EVENT', payload: event.id})
+    }
 
     return (
         <>
-        <form onSubmit={editEvent}>
-        <input placeholder="date of event" type="calendar"></input>
-        <input placeholder="time of event" type="time"></input>
-        <input placeholder="coffee shop name"></input>
-        <input placeholder="address"></input>
-        <input placeholder="city"></input>
-        <input placeholder="state"></input>
-        <input placeholder="zipcode"></input>
+        <form onSubmit={makeEdit}>
+
+        <input placeholder="date of event" type="date" value={date} 
+        onChange={(event) =>setDate(event.target.value)}></input>
+       
+        <input placeholder="time of event" type="time" value={time}
+        onChange={(event) =>setTime(event.target.value)}></input>
+      
+        <input placeholder="coffee shop name" value={eventName}
+        onChange={(event) =>setEventName(event.target.value)}></input>
+       
+        <input placeholder="address" value={address}
+        onChange={(event) =>setAddress(event.target.value)}></input>
+       
+        <input placeholder="city" value={city}
+        onChange={(event) =>setCity(event.target.value)}></input>
+      
+        <input placeholder="state" value={state}
+        onChange={(event) =>setState(event.target.value)}></input>
+      
+        <input placeholder="zipcode" value={zipCode}
+        onChange={(event) =>setZipCode(event.target.value)}></input>
         
-        <button type="submit">MAKE CHANGES</button>
+        <button  type="submit">MAKE EDIT CHANGES</button>
         </form>
 
         </>

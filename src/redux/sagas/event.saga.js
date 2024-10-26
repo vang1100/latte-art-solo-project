@@ -32,7 +32,14 @@ function* deleteEvent(action){
 
 // function to update event
 
-function editEvent(){
+function* editEvent(action){
+   try{
+    yield axios.put(`/api/event/${action.payload}`);
+    yield put({type: 'FETCH_EVENT' });
+   } catch(error){
+    console.log('error in PUT event - saga'. error)
+
+   }
 
 }
 
@@ -40,6 +47,7 @@ function editEvent(){
 function* fetchEventSaga(){
     yield takeEvery('FETCH_EVENT', fetchEvent);
     yield takeEvery('DELETE_EVENT', deleteEvent);
+    yield takeEvery('EDIT_EVENT', editEvent);
 }
 
 export default fetchEventSaga;
