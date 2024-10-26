@@ -9,7 +9,8 @@ router.get('/', (req, res) => {
   // GET route code here
   //console.log('get router for chatbox');
   let queryText = `SELECT "comment", "date", "username" FROM "chatbox"
-JOIN "user" ON "user"."id" = "chatbox"."user_id";`;
+JOIN "user" ON "user"."id" = "chatbox"."user_id"
+ORDER BY "date"`;
 
   pool.query(queryText)
   .then((result) => {
