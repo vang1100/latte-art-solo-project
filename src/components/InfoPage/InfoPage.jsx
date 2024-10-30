@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 // This is one of our simplest components
 // It doesn't have local state
@@ -10,6 +11,7 @@ function InfoPage() {
     <div className="container">
     <h2>Your upcoming events</h2>
     <h2>Chat with other users</h2>
+    
 
     </div>
   );

@@ -1,6 +1,8 @@
 import { useEffect, useState} from 'react';
 import { useSelector, useDispatch} from 'react-redux';
 import EventItem from '../EventItem/EventItem';
+import { Link } from 'react-router-dom';
+
 function EditPage(){
 
     const dispatch = useDispatch();
@@ -21,7 +23,8 @@ function EditPage(){
                   )
             }
         </ul>
-    
+        <Link to='/homepage'><button>Go home</button></Link>
+  
         
         </>
     )
