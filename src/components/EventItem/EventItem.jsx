@@ -10,14 +10,14 @@ function EventItem({event}){
           <li key={event.id}>
                         
                         <h4>
-                        {event.event_name}
-                        <br/>
-                        {event.address} {event.city}, {event.state} {event.zip_code}
-                        <br/>
-                        {event.date.slice(0, 10)} 
-                        <br/>
-                        
-
+                        {event.date ? event.date.slice(0, 10) : 'YYYY/MM/DD'} 
+                            {event.event_name}
+                            <br/>
+                            {event.address} {event.city}, {event.state} {event.zip_code}
+                            <br/>
+                            
+                            {event.time ? event.time.slice(1,5) : 'no time data'}
+                            <br/>
                         </h4>
 
                     </li>

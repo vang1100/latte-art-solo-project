@@ -31,18 +31,22 @@ function Eventlist(){
                     <li key={event.id}>
                         
                         <h4>
-                        {event.event_name}
-                        <br/>
-                        {event.address} {event.city}, {event.state} {event.zip_code}
-                        <br/>
-                        {event.date.slice(0, 10)} 
+                            {event.date ? event.date.slice(0, 10) : 'YYYY/MM/DD'} 
+                            <br/>
+                            {event.event_name}
+                            <br/>
+                            {event.address} {event.city}, {event.state} {event.zip_code}
+                            <br/>
+                            {event.time ? event.time.slice(1,5) : 'no time data'}
+                        </h4>
+                        
                         <br/>
                        <Link to='/edit'><button>Edit</button></Link> 
                         <button onClick={() => dispatch({type: 'DELETE_EVENT', payload: event.id})}>Delete</button>
                         <br/>
                         <br/>
 
-                        </h4>
+                      
 
                     </li>)
             }

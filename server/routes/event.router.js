@@ -66,13 +66,13 @@ router.post('/', (req, res) => {
   
     const sqlText = `
       UPDATE "event" 
-      SET "event_name" = $1, "address" = $2, "zip_code" = $3, "city" = $4, "state" = $5, "date" = $6, "time" = $7
+      SET "event_name" = $1, "address" = $2, "city" = $3, "state" = $4, "zip_code" = $5, "date" = $6, "time" = $7
       WHERE "id" = $8;
     `;
   
 
   
-    pool.query(sqlText, [event_name, address, zip_code, city, state, date, time, id])
+    pool.query(sqlText, [event_name, address, city, state, zip_code, date, time, id])
       .then((result) => {
         console.log(`Updated event in the database`, result);
         res.sendStatus(200);

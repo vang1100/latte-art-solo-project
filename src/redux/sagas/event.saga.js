@@ -37,7 +37,7 @@ function* editEvent(action){
     yield axios.put(`/api/event/${action.payload}`);
     yield put({type: 'FETCH_EVENT' });
    } catch(error){
-    console.log('error in PUT event - saga'. error)
+    console.log('error in PUT event - saga', error)
 
    }
 
