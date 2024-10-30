@@ -40,9 +40,9 @@ function Nav() {
               Create
             </Link>
 
-            {/* <Link className="navLink" to="/map">
-              Coffee Map
-            </Link> */}
+            <Link className="navLink" to="/materialui">
+              MaterialUi
+            </Link>
 
             <LogOutButton className="navLink" />
           </>

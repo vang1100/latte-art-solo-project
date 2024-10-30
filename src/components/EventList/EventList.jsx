@@ -1,24 +1,12 @@
 import { useEffect} from 'react';
-import { Link } from 'react-router-dom';
 import { useSelector, useDispatch} from 'react-redux';
+import EventListItem from '../EventListItem/EventListItem';
+
 
 function Eventlist(){
 
     const dispatch = useDispatch();
     const event = useSelector(store => store.eventReducer);
-
-    // const getEvents = () => {
-    //     axios.get('/api/event')
-    //     .then((response) =>{
-    //         dispatch({
-    //             type: "SET_EVENT",
-    //             payload: response.data,
-    //         });
-    //     })
-    //     .catch((error) => {
-    //     console.log('error in GET events', error);
-    //     });
-    // };
 
     useEffect(() => {
         dispatch({ type: 'FETCH_EVENT'});
@@ -26,7 +14,26 @@ function Eventlist(){
 
     return(
         <>
+        
         <ul>
+        
+            {event.map((event) => 
+            <EventListItem key={event.id} event={event}/>
+            )
+            
+            }
+            
+        </ul>
+         
+         
+       
+        </>
+    )
+}
+
+export default Eventlist;
+
+ {/* <ul>
             {event.map((event) => 
                     <li key={event.id}>
                         
@@ -50,9 +57,17 @@ function Eventlist(){
 
                     </li>)
             }
-        </ul>
-        </>
-    )
-}
+        </ul> */}
 
-export default Eventlist;
+// const getEvents = () => {
+    //     axios.get('/api/event')
+    //     .then((response) =>{
+    //         dispatch({
+    //             type: "SET_EVENT",
+    //             payload: response.data,
+    //         });
+    //     })
+    //     .catch((error) => {
+    //     console.log('error in GET events', error);
+    //     });
+    // };

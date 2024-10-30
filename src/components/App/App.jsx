@@ -23,6 +23,7 @@ import EditPage from '../EditPage/EditPage';
 import CreatePage from '../CreatePage/CreatePage';
 import HomePage from '../HomePage/HomePage';
 import GoogleMap from '../GoogleMap/GoogleMap';
+import MaterialUi from '../MaterialUI/M/MaterialUi';
 
 import './App.css';
 import { END } from 'redux-saga';
@@ -89,8 +90,8 @@ function App() {
 
           <ProtectedRoute
             exact
-            path="/map">
-            <GoogleMap/>
+            path="/materialui">
+            <MaterialUi/>
           </ProtectedRoute>
 
           <Route
