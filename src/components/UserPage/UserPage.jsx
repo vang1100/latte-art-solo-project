@@ -10,7 +10,7 @@ function UserPage() {
     <div className="container">
       <h2>Hello {user.username}!</h2>
       <p>Your ID is: {user.id}</p>
-      <LogOutButton className="btn" />
+      <LogOutButton/>
       <Link to='/homepage'><button>Go Home</button></Link>
       
     </div>

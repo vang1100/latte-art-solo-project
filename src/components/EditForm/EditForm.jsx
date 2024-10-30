@@ -16,21 +16,21 @@ function EditForm(){
         time: '',
     });
 
-    useEffect(() => {
-        // Populate form with existing event data when component mounts
-        if (event) {
-            setFormData({
-                event_name: event.event_name || '',
-                address: event.address || '',
-                city: event.city || '',
-                state: event.state || '',
-                zip_code: event.zip_code || '',
-                date: event.date || '',
-                time: event.time || ''
+    // useEffect(() => {
+    //     // Populate form with existing event data when component mounts
+    //     if (event) {
+    //         setFormData({
+    //             event_name: event.event_name || '',
+    //             address: event.address || '',
+    //             city: event.city || '',
+    //             state: event.state || '',
+    //             zip_code: event.zip_code || '',
+    //             date: event.date || '',
+    //             time: event.time || ''
                 
-            });
-        }
-    }, [event]);
+    //         });
+    //     }
+    // }, [event]);
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -40,8 +40,8 @@ function EditForm(){
         }));
     };
 
-    const makeEdit = (e) => {
-        e.preventDefault();
+    const changeEvent = (event) => {
+        event.preventDefault();
         dispatch({
             type: 'EDIT_EVENT',
             payload: { id: event.id, ...formData }
@@ -51,7 +51,7 @@ function EditForm(){
     return (
         <>
 
-            <form onSubmit={makeEdit}>
+            <form onSubmit={changeEvent}>
                 
                 <input
                     name="event_name"
