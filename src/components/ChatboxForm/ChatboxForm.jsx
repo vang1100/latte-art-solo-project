@@ -1,6 +1,8 @@
 import {useState} from 'react';
 import {useDispatch} from 'react-redux';
 import axios from 'axios';
+import * as React from 'react';
+import TextField from '@mui/material/TextField';
 
 function ChatboxForm(){
     const dispatch = useDispatch();
@@ -30,7 +32,31 @@ function ChatboxForm(){
     return (
         <>
          <h3>SEND A MESSAGE TO YOUR FRIENDS!</h3> 
-       <form onSubmit={handleSubmit}>
+         <form onSubmit={handleSubmit}>
+            
+            <TextField 
+                id="outlined-basic" 
+                variant="outlined" 
+                type="date"
+                value={date}
+                onChange={(event) => setDate(event.target.value)}
+             />
+
+             <br/>
+            
+             <TextField 
+                id="outlined-basic" 
+                label="COMMENT" 
+                variant="outlined"
+                value={comment}
+                onChange={(event) => setComment(event.target.value)} 
+                sx={{ width: '300px', '& .MuiInputBase-root': { height: '80px' } }}
+            />
+        <br/>
+            <button type="submit">Submit</button>
+        </form>
+        
+       {/* <form onSubmit={handleSubmit}>
         <input 
             placeholder="comment"
             value={comment}
@@ -48,7 +74,7 @@ function ChatboxForm(){
         </input>
 
         <button type="submit">Submit</button>
-        </form>
+        </form> */}
         </>
     )
 }

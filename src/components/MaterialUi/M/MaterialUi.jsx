@@ -5,8 +5,12 @@ import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
 import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
+import TextField from '@mui/material/TextField';
+
 function MaterialUi(){
     return (
+
+        <>
         <Card variant="outlined" sx={{ maxWidth: 360 }}>
         <Box sx={{ p: 2 }}>
           <Stack
@@ -29,6 +33,40 @@ function MaterialUi(){
 
         </Box>
       </Card>
+
+      -----------
+
+      <Box
+      component="form"
+      sx={{ '& > :not(style)': { m: 1, width: '10ch' } }}
+      noValidate
+      autoComplete="off"
+    >
+        {/* <form onSubmit={handleSubmit}>
+            <TextField 
+            id="outlined-basic" 
+            label="COMMENT" 
+            variant="outlined"
+            value={comment}
+            onChange={(event) => setComment(event.target.value)} 
+            />
+
+            <TextField 
+            id="outlined-basic" 
+            variant="outlined" 
+            type="date"
+            value={date}
+            onChange={(event) => setDate(event.target.value)}
+             />
+        
+        <button type="submit">Submit</button>
+        </form> */}
+      
+        
+    </Box>
+
+    
+    </>
     );
 }
 

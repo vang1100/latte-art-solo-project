@@ -5,6 +5,8 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+import Button from '@mui/material/Button';
+// import DeleteIcon from '@mui/icons-material/Delete';
 
 function EventListItem({event}){
 
@@ -35,8 +37,17 @@ function EventListItem({event}){
                         </Typography>
                 </Box>   
             </Card>
-    <Link to='/edit'><button>Edit</button></Link>                  
-    <button onClick={() => dispatch({type: 'DELETE_EVENT', payload: event.id})}>Delete</button>     
+    <Link to='/edit'>  <Button 
+    variant="outlined">EDIT</Button></Link>                  
+    <Button 
+    variant="outlined" 
+    // startIcon={<DeleteIcon />}
+    onClick={() => 
+    dispatch
+    ({type: 'DELETE_EVENT', payload: event.id})}>
+  Delete
+    </Button>
+       
                         
 
             </li>
