@@ -30,21 +30,20 @@ function EventFormItem({event}){
       
         return `${formattedHour}:${minute} ${ampm}`;
       };
-      
+
     return(
         <>
           <li key={event.id}>
                         
                         <h4>
-                            {formatDate(event.date)}
+                            {formatDate(event.date)} at {formatTime(event.time)}
                             <br/>
-                            {formatTime(event.time)}
                             {event.event_name}
                             <br/>
                             {event.address} {event.city}, {event.state} {event.zip_code}
                             <br/>
                             
-                            {event.time ? event.time.slice(0,5) : 'no time data'}
+                           
                             <br/>
                         </h4>
 
