@@ -17,9 +17,6 @@ function Chatbox(){
     return(
         <>
 
-
-       <h3>CHATBOX</h3> 
-
         <ul>
 
             {/* if the chatbox length is not zero, then load */}

@@ -40,11 +40,11 @@ function Nav() {
               Create
             </Link>
 
-            <Link className="navLink" to="/materialui">
+            {/* <Link className="navLink" to="/materialui">
               MaterialUi
-            </Link>
+            </Link> */}
 
-            <LogOutButton className="navLink" />
+            {/* <LogOutButton className="navLink" /> */}
           </>
         )}
 

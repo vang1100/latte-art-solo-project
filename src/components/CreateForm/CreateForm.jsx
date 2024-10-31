@@ -61,7 +61,7 @@ function CreateForm(){
         <input placeholder="zipcode" value={zipCode}
         onChange={(event) =>setZipCode(event.target.value)}></input>
         
-        <button type="submit">MAKE CHANGES</button>
+        <button type="submit">CREATE</button>
         </form>
         </>
     )

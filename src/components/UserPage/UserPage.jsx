@@ -2,6 +2,7 @@ import React from 'react';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import {useSelector} from 'react-redux';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+import { Button } from '@mui/material';
 
 function UserPage() {
   // this component doesn't do much to start, just renders some user reducer info to the DOM
@@ -11,7 +12,17 @@ function UserPage() {
       <h2>Hello {user.username}!</h2>
       <p>Your ID is: {user.id}</p>
       <LogOutButton/>
-      <Link to='/homepage'><button>Go Home</button></Link>
+      <Link to='/homepage'><Button variant="contained"
+          sx={{
+            backgroundColor: '#E9967A',
+            color: 'white',
+            '&:hover': {
+              backgroundColor: '#E8856A'
+            }
+          }}
+          onClick={() => {
+            history.push('/login');
+          }}>Go Home</Button></Link>
       
     </div>
   );

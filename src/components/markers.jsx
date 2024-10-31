@@ -1,6 +1,7 @@
 const markers = [
 {
     position:{lat: 44.95152716625376, lng: -93.08509290488523},
+    image: "coffee_pic_solo_prj.png",
     name:"Eggdonut's Cafe",
     description: "289 5th St E, St Paul, MN 55101",
 },

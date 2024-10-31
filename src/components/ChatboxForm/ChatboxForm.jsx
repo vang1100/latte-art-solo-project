@@ -3,6 +3,7 @@ import {useDispatch} from 'react-redux';
 import axios from 'axios';
 import * as React from 'react';
 import TextField from '@mui/material/TextField';
+import { Button } from '@mui/material';
 
 function ChatboxForm(){
     const dispatch = useDispatch();
@@ -53,7 +54,20 @@ function ChatboxForm(){
                 sx={{ width: '300px', '& .MuiInputBase-root': { height: '80px' } }}
             />
         <br/>
-            <button type="submit">Submit</button>
+        <Button 
+            
+            type="submit"
+            variant="outlined"
+            sx={{
+              color: '#E9967A',
+              borderColor: '#E9967A',
+              '&:hover': {
+                borderColor: '#E9967A',
+                backgroundColor: 'rgba(233, 150, 122, 0.04)'
+              }
+            }}>
+              SUBMIT
+      </Button> 
         </form>
         
        {/* <form onSubmit={handleSubmit}>

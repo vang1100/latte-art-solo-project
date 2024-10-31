@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import './LandingPage.css';
+import { ButtonBase } from '@mui/material';
 
 // CUSTOM COMPONENTS
 import RegisterForm from '../RegisterForm/RegisterForm';
@@ -56,7 +57,15 @@ function LandingPage() {
 
           <center>
             <h4>Already a Member?</h4>
-            <button className="btn btn_sizeSm" onClick={onLogin}>
+            <button variant="contained"
+          sx={{
+            backgroundColor: '#E9967A',
+            color: 'white',
+            '&:hover': {
+              backgroundColor: '#E8856A'
+            }
+          }}
+         onClick={onLogin}>
               Login
             </button>
           </center>

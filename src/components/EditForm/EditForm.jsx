@@ -1,39 +1,35 @@
 import { useEffect, useState} from 'react';
 import { useSelector, useDispatch} from 'react-redux';
+import { Button } from '@mui/material';
 
-function EditForm(){
+function EditForm({event}){
 
     const dispatch = useDispatch();
-    const event = useSelector(store => store.eventReducer);
-
-    const [formData, setFormData] = useState({
-        event_name: '',
-        address: '',
-        city: '',
-        state: '',
-        zip_code: '',
-        date: '',
-        time: '',
-    });
 
     // useEffect(() => {
-    //     // Populate form with existing event data when component mounts
-    //     if (event) {
-    //         setFormData({
-    //             event_name: event.event_name || '',
-    //             address: event.address || '',
-    //             city: event.city || '',
-    //             state: event.state || '',
-    //             zip_code: event.zip_code || '',
-    //             date: event.date || '',
-    //             time: event.time || ''
-                
-    //         });
-    //     }
-    // }, [event]);
+    //     console.log('event', event);
+    // }, []);
+    
+    // const event = useSelector(store => store.eventReducer);
+
+
+    ///** after fields are edited, it changes the order of the edit. how to stop that? */
+
+    const [formData, setFormData] = useState({
+        id: event.id,
+        event_name: event.event_name,
+        address: event.address,
+        city: event.city,
+        state: event.state,
+        zip_code: event.zip_code,
+        date: event.date.slice(0,10),
+        time: event.time,
+    });
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
+        console.log('typeof value', typeof value);
+        console.log('value', value);
         setFormData(prevData => ({
             ...prevData,
             [name]: value
@@ -44,7 +40,7 @@ function EditForm(){
         event.preventDefault();
         dispatch({
             type: 'EDIT_EVENT',
-            payload: { id: event.id, ...formData }
+            payload: formData // contains the updated information for the event that's being edited.
         });
     };
 
@@ -101,7 +97,37 @@ function EditForm(){
                     value={formData.time}
                     onChange={handleInputChange}
                 />
-                <button type="submit">MAKE EDIT CHANGES</button>
+       
+
+                <Button 
+                
+                    type="submit"
+                    variant="outlined"
+                    sx={{
+                    color: '#E9967A',
+                    borderColor: '#E9967A',
+                        '&:hover': {
+                    borderColor: '#E9967A',
+                    backgroundColor: 'rgba(233, 150, 122, 0.04)'
+                        }
+                    }}>
+                        COMPLETE
+                </Button>        
+                
+                <Button 
+                    variant="contained"
+                    sx={{
+                    backgroundColor: '#E9967A',
+                    color: 'white',
+                    '&:hover': 
+                    {backgroundColor: '#E8856A'}
+                        }}
+                    onClick={() => 
+                        dispatch
+                            ({type: 'DELETE_EVENT', payload: event.id})}>
+                            Delete
+                </Button>
+            
             </form>
         </>
     );

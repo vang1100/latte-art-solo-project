@@ -37,7 +37,7 @@ function EventListItem({event}){
                         </Typography>
                 </Box>   
             </Card>
-    <Link to='/edit'> 
+    {/* <Link to='/edit'> 
         <Button 
               variant="outlined"
               sx={{
@@ -51,21 +51,8 @@ function EventListItem({event}){
                 EDIT
         </Button>
     </Link>                  
-    
-    <Button 
-         variant="contained"
-         sx={{
-           backgroundColor: '#E9967A',
-           color: 'white',
-           '&:hover': {
-             backgroundColor: '#E8856A'
-           }
-         }}
-        onClick={() => 
-            dispatch
-                ({type: 'DELETE_EVENT', payload: event.id})}>
-        Delete
-    </Button>
+     */}
+   
        
                         
 

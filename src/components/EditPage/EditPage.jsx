@@ -1,6 +1,6 @@
 import { useEffect, useState} from 'react';
 import { useSelector, useDispatch} from 'react-redux';
-import EventItem from '../EventItem/EventItem';
+import EventFormItem from '../EventFormItem/EvenFormtItem';
 import { Link } from 'react-router-dom';
 
 function EditPage(){
@@ -19,7 +19,7 @@ function EditPage(){
         <h2>List of events to edit</h2>
         <ul>
             {event.map((event) => 
-            <EventItem key={event.id} event={event}/>
+            <EventFormItem key={event.id} event={event}/>
                   )
             }
         </ul>

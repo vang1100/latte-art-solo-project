@@ -34,7 +34,7 @@ function* deleteEvent(action){
 
 function* editEvent(action){
    try{
-    yield axios.put(`/api/event/${action.payload}`);
+    yield axios.put(`/api/event/${action.payload.id}`, action.payload); // sending updates to the server
     yield put({type: 'FETCH_EVENT' });
    } catch(error){
     console.log('error in PUT event - saga', error)

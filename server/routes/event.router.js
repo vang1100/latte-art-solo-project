@@ -55,7 +55,7 @@ router.post('/', (req, res) => {
  router.put('/:id', (req, res) => {
     // console.log("this is req.params", req.params);
     // console.log("this is req.body", req.body.city);
-    const { id } = req.params;
+    const id = req.params.id;
     const event_name = req.body.event_name;
     const address = req.body.address;
     const zip_code = req.body.zip_code;
