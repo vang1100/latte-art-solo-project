@@ -3,14 +3,19 @@ import Chatbox from "../Chatbox/Chatbox";
 import ChatboxForm from "../ChatboxForm/ChatboxForm";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import { Button } from "@mui/material";
+import './HomePage.css';
+
 function HomePage(){
     return(
         <>
-        <img src="logo.png"/>
+        <div className="align-items">
+      <img className="logo" src="logo.png" alt="Logo" />
+    </div>
         
             <Eventlist/>
         <br/>
         <br/>
+        <div className="align-items">
             <Link to='/create'>
             
               <Button 
@@ -29,7 +34,8 @@ function HomePage(){
 
             <Link to='/edit'>
 
-              <Button 
+              <Button
+               
                 variant="contained"
                 sx={{
                 backgroundColor: '#E9967A',
@@ -42,6 +48,8 @@ function HomePage(){
             </Button> 
           
           </Link>
+
+          </div>
 
             <ChatboxForm />
             <Chatbox />

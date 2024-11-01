@@ -1,6 +1,7 @@
 import { useEffect} from 'react';
 import { useSelector, useDispatch} from 'react-redux';
 import EventListItem from '../EventListItem/EventListItem';
+import './EventList.css'
 
 
 function Eventlist(){
@@ -14,9 +15,10 @@ function Eventlist(){
 
     return(
         <>
-        
+        <div className="eventPage">
+
         <ul>
-        
+            
             {event.map((event) => 
             <EventListItem key={event.id} event={event}/>
             )
@@ -24,6 +26,9 @@ function Eventlist(){
             }
             
         </ul>
+
+
+        </div>
          
          
        
