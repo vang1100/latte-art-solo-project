@@ -8,8 +8,7 @@ function GoogleMap(){
         {
             position:{lat: 44.95152716625376, lng: -93.08509290488523},
             name:"Eggdonut's Cafe",
-            image:"coffee_pic_solo_prj.png",
-            description: "289 5th St E, St Paul, MN 55101",
+            description: "289 5th St E, St Paul, MN 55101"
         },
         
         {
@@ -86,7 +85,7 @@ function GoogleMap(){
               onCloseClick={() => setSelectedMarker(null)}
             >
               <div>
-                <img src={selectedMarker.image}/>
+                
                 <h3>{selectedMarker.name}</h3>
                 <p>{selectedMarker.description}</p>
               </div>

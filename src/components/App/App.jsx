@@ -94,6 +94,13 @@ function App() {
             <MaterialUi/>
           </ProtectedRoute>
 
+          <ProtectedRoute
+            exact
+            path="/map">
+            <GoogleMap/>
+          </ProtectedRoute>
+          
+
           <Route
             exact
             path="/login"

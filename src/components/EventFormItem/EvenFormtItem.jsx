@@ -1,5 +1,13 @@
 import EditForm from "../EditForm/EditForm";
-import { useState} from 'react';
+import * as React from 'react';
+import Card from '@mui/material/Card';
+import Box from '@mui/material/Box';
+import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
+import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+import Button from '@mui/material/Button';
+import { Divider } from "@mui/material";
 
 function EventFormItem({event}){
 
@@ -33,22 +41,45 @@ function EventFormItem({event}){
 
     return(
         <>
-          <li key={event.id}>
-                        
-                        <h4>
-                            {formatDate(event.date)} at {formatTime(event.time)}
-                            <br/>
+         <br/>
+              <li key={event.id}>
+            <Card variant="outlined" sx={{ maxWidth: 460 }}>
+                <Box sx={{ p: 2 }}>
+                    <Stack
+                    direction="row"
+                    sx={{ justifyContent: 'space-between', alignItems: 'center' }}>
+                
+                        <Typography gutterBottom variant="h5" component="div">
                             {event.event_name}
-                            <br/>
-                            {event.address} {event.city}, {event.state} {event.zip_code}
-                            <br/>
-                            
-                           
-                            <br/>
-                        </h4>
+                        </Typography>
+                        
+                        <Typography gutterBottom variant="h6" component="div">
+                        
+                        </Typography>
 
-                    </li>
-                    <EditForm event={event}/>
+                    </Stack>
+                    
+                        <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                        {event.address} {event.city}, {event.state} {event.zip_code}
+                        <br/>
+                       {formatDate(event.date)} at {formatTime(event.time)}
+                        </Typography>
+
+                    <Divider>
+
+                    </Divider>
+
+                    <Stack>
+                         <EditForm event={event}/>   
+                    </Stack>
+
+                </Box>   
+
+            </Card>
+            </li>
+            <br/>
+            
+
         </>
     )
 }

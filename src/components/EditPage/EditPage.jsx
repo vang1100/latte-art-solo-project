@@ -16,14 +16,15 @@ function EditPage(){
 
     return(
         <>
-        <h2>List of events to edit</h2>
+         <Link to='/homepage'><button>Go home</button></Link>
+    
         <ul>
             {event.map((event) => 
             <EventFormItem key={event.id} event={event}/>
                   )
             }
         </ul>
-        <Link to='/homepage'><button>Go home</button></Link>
+       
   
         
         </>

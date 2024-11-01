@@ -10,12 +10,40 @@ import Button from '@mui/material/Button';
 
 function EventListItem({event}){
 
+    const formatDate = (dateString) => {
+        const date = new Date(dateString);
+        return new Intl.DateTimeFormat('en-US', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+        }).format(date);
+      };
+
+      const formatTime = (timeString) => {
+        const [hourString, minute] = timeString.split(':');
+        const hour = parseInt(hourString, 10);
+        
+        let ampm = 'AM';
+        let formattedHour = hour;
+      
+        if (hour > 12) {
+          formattedHour = hour - 12;
+          ampm = 'PM';
+        } else if (hour === 12) {
+          ampm = 'PM';
+        } else if (hour === 0) {
+          formattedHour = 12;
+        }
+      
+        return `${formattedHour}:${minute} ${ampm}`;
+      };
+
     const dispatch = useDispatch();
 
     return(
         <>
           <li key={event.id}>
-            <Card variant="outlined" sx={{ maxWidth: 360 }}>
+            <Card variant="outlined" sx={{ maxWidth: 460 }}>
                 <Box sx={{ p: 2 }}>
                     <Stack
                     direction="row"
@@ -26,18 +54,28 @@ function EventListItem({event}){
                         </Typography>
                         
                         <Typography gutterBottom variant="h6" component="div">
-                        {event.time ? event.time.slice(1,5) : 'no time data'}PM
+                        
                         </Typography>
 
                     </Stack>
                         <Typography variant="body2" sx={{ color: 'text.secondary' }}>
                         {event.address} {event.city}, {event.state} {event.zip_code}
                         <br/>
-                        {event.date ? event.date.slice(0, 10) : 'YYYY/MM/DD'} 
+                       {formatDate(event.date)} at {formatTime(event.time)}
                         </Typography>
                 </Box>   
             </Card>
-    {/* <Link to='/edit'> 
+        
+
+            </li>
+                    
+        </>
+    )
+}
+
+export default EventListItem;
+
+ {/* <Link to='/edit'> 
         <Button 
               variant="outlined"
               sx={{
@@ -52,14 +90,3 @@ function EventListItem({event}){
         </Button>
     </Link>                  
      */}
-   
-       
-                        
-
-            </li>
-                    
-        </>
-    )
-}
-
-export default EventListItem;

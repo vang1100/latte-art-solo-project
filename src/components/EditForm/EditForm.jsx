@@ -90,6 +90,8 @@ function EditForm({event}){
                     value={formData.date}
                     onChange={handleInputChange}
                 />
+
+                <br/>
                 <input
                     name="time"
                     placeholder="time of event"
@@ -97,7 +99,7 @@ function EditForm({event}){
                     value={formData.time}
                     onChange={handleInputChange}
                 />
-       
+       <br/>
 
                 <Button 
                 
