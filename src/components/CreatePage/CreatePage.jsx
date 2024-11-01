@@ -1,14 +1,28 @@
 import GoogleMap from "../GoogleMap/GoogleMap";
 import CreateForm from "../CreateForm/CreateForm";
 import { Link } from 'react-router-dom';
+import { Button } from "@mui/material";
 
 function CreatePage(){
     return(
         <>
         <GoogleMap />   
-        CREATE AN EVENT!
         <CreateForm />
-        <Link to='/homepage'><button>Go home</button></Link>
+        <Link to='/homepage'>
+            <Button 
+                variant="contained"
+                sx={{
+                backgroundColor: '#c7a69b', // Lighter shade
+                color: 'white',
+                '&:hover': {
+                backgroundColor: '#b89b88' // Slightly darker shade for hover effect
+                }
+            }}
+            >
+                Go home
+            </Button>
+        </Link>
+    
         </>
         
     )

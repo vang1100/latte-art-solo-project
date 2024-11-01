@@ -2,7 +2,7 @@ import { useEffect, useState} from 'react';
 import { useSelector, useDispatch} from 'react-redux';
 import EventFormItem from '../EventFormItem/EvenFormtItem';
 import { Link } from 'react-router-dom';
-
+import { Button } from '@mui/material';
 function EditPage(){
 
     const dispatch = useDispatch();
@@ -16,7 +16,20 @@ function EditPage(){
 
     return(
         <>
-         <Link to='/homepage'><button>Go home</button></Link>
+        <Link to='/homepage'>
+            <Button 
+                variant="contained"
+                sx={{
+                backgroundColor: '#c7a69b', // Lighter shade
+                color: 'white',
+                '&:hover': {
+                backgroundColor: '#b89b88' // Slightly darker shade for hover effect
+                }
+            }}
+            >
+                Go home
+            </Button>
+        </Link>
     
         <ul>
             {event.map((event) => 

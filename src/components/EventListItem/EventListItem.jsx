@@ -7,6 +7,7 @@ import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import Button from '@mui/material/Button';
 // import DeleteIcon from '@mui/icons-material/Delete';
+import './EventListItem.css'
 
 function EventListItem({event}){
 
@@ -42,7 +43,7 @@ function EventListItem({event}){
 
     return(
         <>
-          <li key={event.id}>
+          <li key={event.id} className="no-bullet">
             <Card variant="outlined" sx={{ maxWidth: 460 }}>
                 <Box sx={{ p: 2 }}>
                     <Stack

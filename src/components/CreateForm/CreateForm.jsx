@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
+import { Button } from '@mui/material';
 
 function CreateForm(){
 
@@ -61,7 +62,20 @@ function CreateForm(){
         <input placeholder="zipcode" value={zipCode}
         onChange={(event) =>setZipCode(event.target.value)}></input>
         
-        <button type="submit">CREATE</button>
+        <Button 
+            
+            type="submit"
+            variant="outlined"
+            sx={{
+              color: '#E9967A',
+              borderColor: '#E9967A',
+              '&:hover': {
+                borderColor: '#E9967A',
+                backgroundColor: 'rgba(233, 150, 122, 0.04)'
+              }
+            }}>
+              CREATE
+      </Button> 
         </form>
         </>
     )

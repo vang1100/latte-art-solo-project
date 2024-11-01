@@ -4,7 +4,7 @@ const router = express.Router();
 
 router.get('/', function(req, res) {
   
-    let queryText = 'SELECT * FROM "event";'; 
+    let queryText = 'SELECT * FROM "event" ORDER BY "date" ASC;'; 
   
   // sending the query to the DB
     pool.query(queryText)

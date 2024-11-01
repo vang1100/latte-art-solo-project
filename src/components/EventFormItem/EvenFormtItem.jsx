@@ -76,6 +76,7 @@ function EventFormItem({event}){
                 </Box>   
 
             </Card>
+            
             </li>
             <br/>
             

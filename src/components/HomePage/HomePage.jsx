@@ -6,6 +6,8 @@ import { Button } from "@mui/material";
 function HomePage(){
     return(
         <>
+        <img src="logo.png"/>
+        
             <Eventlist/>
         <br/>
         <br/>
@@ -43,6 +45,8 @@ function HomePage(){
 
             <ChatboxForm />
             <Chatbox />
+
+           
         
         </>
        
