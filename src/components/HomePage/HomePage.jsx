@@ -16,14 +16,6 @@ function HomePage(){
 
             <HomePageButtons/>
 
-            <br/>
-          
-            <ChatboxForm />
-            
-            <br/>
-            
-            <Chatbox />
-
            
         
         </>

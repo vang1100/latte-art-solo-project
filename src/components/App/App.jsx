@@ -24,6 +24,7 @@ import CreatePage from '../CreatePage/CreatePage';
 import HomePage from '../HomePage/HomePage';
 import GoogleMap from '../GoogleMap/GoogleMap';
 import MaterialUi from '../MaterialUI/M/MaterialUi';
+import Chatbox from '../Chatbox/Chatbox';
 
 import './App.css';
 import { END } from 'redux-saga';
@@ -73,6 +74,14 @@ function App() {
           >
             <HomePage />
           </ProtectedRoute>
+
+          <ProtectedRoute
+            exact
+            path="/chatbox"
+            >
+            <Chatbox/>
+          </ProtectedRoute>
+
 
           <ProtectedRoute
             exact

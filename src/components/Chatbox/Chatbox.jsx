@@ -4,7 +4,9 @@ import './Chatbox.css'
 import Card from '@mui/material/Card';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-
+import ChatboxForm from '../ChatboxForm/ChatboxForm';
+import Logo from "../../Logo/Logo";
+import HomePageButtons from "../../HomePageButtons/HomePageButtons";
 
 function Chatbox(){
     const chatbox = useSelector(store => store.chatboxReducer);
@@ -27,7 +29,15 @@ function Chatbox(){
 
     return(
 
-        <div className="align-item">
+        <>
+            <Logo/>
+            <HomePageButtons/>
+            <br/>
+            <ChatboxForm/>
+
+            <br/>
+
+            <div className="align-item">
 
             <Card variant="outlined" sx={{ maxWidth: 460 }}>
 
@@ -56,7 +66,7 @@ function Chatbox(){
             </Card>
 
         </div>
-
+</>
        
     )
 }

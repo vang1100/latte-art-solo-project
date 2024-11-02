@@ -10,7 +10,7 @@ function Nav() {
   return (
     <div className="nav">
       <Link to="/home">
-        <h2 className="nav-title">LATTE MEET</h2>
+        <h2 className="nav-title">{user.username}!</h2>
        
       </Link>
       <div>
@@ -32,6 +32,10 @@ function Nav() {
             <Link className="navLink" to="/homepage">
               Home
             </Link>
+
+            <Link className="navLink" to="/chatbox">
+              Chat
+            </Link> 
 
             <Link className="navLink" to="/edit">
               Edit 

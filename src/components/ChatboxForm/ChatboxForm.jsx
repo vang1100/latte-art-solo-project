@@ -32,7 +32,7 @@ function ChatboxForm(){
         })
     };
     return (
-        <div className="align-items">
+        <div className="align-item">
         
          <form onSubmit={handleSubmit}>
             
@@ -58,7 +58,7 @@ function ChatboxForm(){
             />
         <br/>
         <br/>
-        <div className="align-right" >
+        <div >
         <Button 
              
             type="submit"
