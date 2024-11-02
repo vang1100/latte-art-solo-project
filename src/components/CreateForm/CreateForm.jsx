@@ -17,6 +17,16 @@ function CreateForm(){
     const [state, setState] = useState('');
     const [zipCode, setZipCode] = useState('');
     
+    const demo = () => {
+        console.log('clicking this button will auto fill the form');
+            setEventName('Backstory Coffee Roasters');
+            setAddress('432 Wabasha St S');
+            setCity('St Paul');
+            setState('MN');
+            setZipCode('55107');
+            setDate('2024-11-15');
+            setTime('11:00');
+    }
 
     const addEvent = (event) => {
         event.preventDefault();
@@ -42,7 +52,10 @@ function CreateForm(){
 
     return (
         <>
+    
         <form className="align-item" onSubmit={addEvent}>
+
+            
           
             <Stack>
                   <List>
@@ -85,6 +98,9 @@ function CreateForm(){
                               }}>
                                 CREATE
                         </Button> 
+
+                        <p onClick={demo}>**</p>
+                       
                 
             </Stack>
                           

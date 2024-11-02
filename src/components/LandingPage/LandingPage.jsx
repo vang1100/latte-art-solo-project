@@ -16,11 +16,10 @@ function LandingPage() {
 
   return (
     <div className="container">
-      <h2>{heading} hi</h2>
+      <h2>L A T T E . M E E T</h2>
 
       <div className="grid">
         <div className="grid-col grid-col_8">
-         put a picture here
         </div>
         <div className="grid-col grid-col_4">
           <RegisterForm />

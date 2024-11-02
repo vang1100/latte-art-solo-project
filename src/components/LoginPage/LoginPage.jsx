@@ -23,7 +23,7 @@ function LoginPage() {
              backgroundColor: '#E8856A'
            }
          }}>
-          REGISTER-test
+          REGISTER
         </Button>
         
       </center>
