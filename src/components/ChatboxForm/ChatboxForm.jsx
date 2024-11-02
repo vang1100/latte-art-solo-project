@@ -4,6 +4,7 @@ import axios from 'axios';
 import * as React from 'react';
 import TextField from '@mui/material/TextField';
 import { Button } from '@mui/material';
+import './Chatbox.css'
 
 function ChatboxForm(){
     const dispatch = useDispatch();
@@ -31,11 +32,12 @@ function ChatboxForm(){
         })
     };
     return (
-        <>
-         <h3>SEND A MESSAGE TO YOUR FRIENDS!</h3> 
+        <div className="align-items">
+        
          <form onSubmit={handleSubmit}>
             
             <TextField 
+                className="align-items"
                 id="outlined-basic" 
                 variant="outlined" 
                 type="date"
@@ -43,6 +45,7 @@ function ChatboxForm(){
                 onChange={(event) => setDate(event.target.value)}
              />
 
+             <br/>
              <br/>
             
              <TextField 
@@ -54,8 +57,10 @@ function ChatboxForm(){
                 sx={{ width: '300px', '& .MuiInputBase-root': { height: '80px' } }}
             />
         <br/>
+        <br/>
+        <div className="align-right" >
         <Button 
-            
+             
             type="submit"
             variant="outlined"
             sx={{
@@ -67,7 +72,7 @@ function ChatboxForm(){
               }
             }}>
               SUBMIT
-      </Button> 
+      </Button> </div>
         </form>
         
        {/* <form onSubmit={handleSubmit}>
@@ -89,7 +94,7 @@ function ChatboxForm(){
 
         <button type="submit">Submit</button>
         </form> */}
-        </>
+        </div>
     )
 }
 

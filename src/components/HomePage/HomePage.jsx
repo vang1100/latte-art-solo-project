@@ -29,7 +29,6 @@ function HomePage(){
               }}>
               CREATE AN EVENT
             </Button> 
-
             </Link>
 
             <Link to='/edit'>
@@ -50,8 +49,11 @@ function HomePage(){
           </Link>
 
           </div>
-
+          <br/>
+          <br/>
             <ChatboxForm />
+            <br/>
+          <br/>
             <Chatbox />
 
            

@@ -1,3 +1,15 @@
 .no-bullet {
     list-style-type: none;
+    
+  }
+
+  .align-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+  }
+
+  .user-date{
+    color: #7cb1b9;
   }

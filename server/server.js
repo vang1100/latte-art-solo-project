@@ -2,6 +2,9 @@ const express = require('express');
 const app = express();
 require('dotenv').config();
 const PORT = process.env.PORT || 5001;
+// const googleApi = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
+
+// console.log('test googleApi', googleApi);
 
 // Middleware Includes
 const sessionMiddleware = require('./modules/session-middleware');

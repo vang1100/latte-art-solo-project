@@ -1,9 +1,15 @@
 import { APIProvider, Map, Marker, InfoWindow} from '@vis.gl/react-google-maps';
 import { useState, React } from 'react';
+//import {REACT_APP_GOOGLE_MAPS_API_KEY} from '../../../.env';
+
 
 
 function GoogleMap(){
 
+  //const googleApi = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
+
+//  console.log('test googleApi', REACT_APP_GOOGLE_MAPS_API_KEY);
+  
     const markers = [
         {
             position:{lat: 44.95152716625376, lng: -93.08509290488523},

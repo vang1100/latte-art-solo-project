@@ -45,7 +45,7 @@ function EventListItem({event}){
         <>
           <li key={event.id} className="no-bullet">
             <Card variant="outlined" sx={{ maxWidth: 460 }}>
-                <Box sx={{ p: 2 }}>
+                <Box sx={{ p: 4 }}>
                     <Stack
                     direction="row"
                     sx={{ justifyContent: 'space-between', alignItems: 'center' }}>

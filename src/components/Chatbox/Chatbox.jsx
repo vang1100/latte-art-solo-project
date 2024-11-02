@@ -1,6 +1,10 @@
 import { useEffect} from 'react';
 import { useSelector, useDispatch} from 'react-redux';
 import './Chatbox.css'
+import Card from '@mui/material/Card';
+import Box from '@mui/material/Box';
+import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
 
 
 function Chatbox(){
@@ -23,25 +27,41 @@ function Chatbox(){
 
 
     return(
-        <>
 
-        <ul>
+        <div className="align-items">
 
-            {/* if the chatbox length is not zero, then load */}
-            {(chatbox.length !== 0) && chatbox.map((chatbox) =>
-            
-            <li key={chatbox.id} className="no-bullet">
-               <h4>{chatbox.username} posted on {formatDate(chatbox.date)}</h4>
-                                                {/* if there is date data, then slice or if there is not, add in this yyyymddd string */}
-                <p>{chatbox.comment}</p>
-                
-            </li>)}
-        </ul>
-       
-        </>
+            <Card variant="outlined" sx={{ maxWidth: 460 }}>
+
+                <Box sx={{ p: 2 }}>
+
+                    <Typography gutterBottom variant="h7" component="div">
+        
+                    <ul>
+
+                        {/* if the chatbox length is not zero, then load */}
+                        {(chatbox.length !== 0) && chatbox.map((chatbox) =>
+
+                            <li key={chatbox.id} className="no-bullet">
+                             
+                             <span className="user-date"><h4>{chatbox.username} posted on {formatDate(chatbox.date)}</h4></span>
+                               
+                                    {/* if there is date data, then slice or if there is not, add in this yyyymddd string */}
+                                <p>{chatbox.comment}</p>
+    
+                            </li>)}
+                    </ul>
+
+                    </Typography>
+        
+                </Box>
+
+            </Card>
+
+        </div>
 
        
     )
 }
 
 export default Chatbox;
+
