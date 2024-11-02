@@ -7,6 +7,7 @@ import Typography from '@mui/material/Typography';
 import ChatboxForm from '../ChatboxForm/ChatboxForm';
 import Logo from "../../Logo/Logo";
 import HomePageButtons from "../../HomePageButtons/HomePageButtons";
+import HomeButton from '../../HomeButton/HomeButton';
 
 function Chatbox(){
     const chatbox = useSelector(store => store.chatboxReducer);
@@ -31,6 +32,8 @@ function Chatbox(){
 
         <>
             <Logo/>
+            <HomeButton/>
+            
             <HomePageButtons/>
             <br/>
             <ChatboxForm/>

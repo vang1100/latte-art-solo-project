@@ -6,7 +6,10 @@ function HomePageButtons(){
     return (
 
         <div className="align-item">
-   
+   <br/>
+   <br/>
+   <br/>
+<br/>
     <Link to='/create'>
             
             <Button 
@@ -39,7 +42,12 @@ function HomePageButtons(){
           </Button> 
         
     </Link>
+  
+    <Link to='/edit'>
+        
+        
     
+</Link>
         </div>
 
     )

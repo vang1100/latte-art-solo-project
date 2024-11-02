@@ -43,6 +43,7 @@ function ChatboxForm(){
                 type="date"
                 value={date}
                 onChange={(event) => setDate(event.target.value)}
+                sx={{ width: '300px', '& .MuiInputBase-root': { height: '80px' } }}
              />
 
              <br/>
@@ -50,7 +51,7 @@ function ChatboxForm(){
             
              <TextField 
                 id="outlined-basic" 
-                label="COMMENT" 
+                label="LEAVE COMMENT HERE" 
                 variant="outlined"
                 value={comment}
                 onChange={(event) => setComment(event.target.value)} 
