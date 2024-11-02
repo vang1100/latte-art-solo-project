@@ -1,6 +1,8 @@
-import { useEffect, useState} from 'react';
-import { useSelector, useDispatch} from 'react-redux';
+import { useState} from 'react';
+import { useDispatch} from 'react-redux';
 import { Button } from '@mui/material';
+import './EditForm.css';
+
 
 function EditForm({event}){
 
@@ -45,9 +47,9 @@ function EditForm({event}){
     };
 
     return (
-        <>
+        <div>
 
-            <form onSubmit={changeEvent}>
+            <form  onSubmit={changeEvent}>
                 
                 <input
                     name="event_name"
@@ -131,7 +133,7 @@ function EditForm({event}){
                 </Button>
             
             </form>
-        </>
+        </div>
     );
 
     // const dispatch = useDispatch();

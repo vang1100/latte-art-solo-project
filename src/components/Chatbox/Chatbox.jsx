@@ -3,7 +3,6 @@ import { useSelector, useDispatch} from 'react-redux';
 import './Chatbox.css'
 import Card from '@mui/material/Card';
 import Box from '@mui/material/Box';
-import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 
 
@@ -28,7 +27,7 @@ function Chatbox(){
 
     return(
 
-        <div className="align-items">
+        <div className="align-item">
 
             <Card variant="outlined" sx={{ maxWidth: 460 }}>
 
@@ -41,11 +40,10 @@ function Chatbox(){
                         {/* if the chatbox length is not zero, then load */}
                         {(chatbox.length !== 0) && chatbox.map((chatbox) =>
 
-                            <li key={chatbox.id} className="no-bullet">
+                            <li key={chatbox.id}>
                              
                              <span className="user-date"><h4>{chatbox.username} posted on {formatDate(chatbox.date)}</h4></span>
-                               
-                                    {/* if there is date data, then slice or if there is not, add in this yyyymddd string */}
+                        
                                 <p>{chatbox.comment}</p>
     
                             </li>)}

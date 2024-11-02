@@ -10,6 +10,7 @@ import Button from '@mui/material/Button';
 import { Divider } from "@mui/material";
 import './EventFormItem.css'
 
+
 function EventFormItem({event}){
 
     const formatDate = (dateString) => {
@@ -42,6 +43,7 @@ function EventFormItem({event}){
 
     return(
         <>
+        
          <br/>
               <li key={event.id} className="no-bullet">
             <Card variant="outlined" sx={{ maxWidth: 460 }}>

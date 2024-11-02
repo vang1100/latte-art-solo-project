@@ -4,8 +4,6 @@ import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom/cjs/react-router-dom.min';
-import Button from '@mui/material/Button';
 // import DeleteIcon from '@mui/icons-material/Delete';
 import './EventListItem.css'
 

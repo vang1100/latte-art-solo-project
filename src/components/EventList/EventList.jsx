@@ -15,7 +15,7 @@ function Eventlist(){
 
     return(
         <>
-        <div className="eventPage">
+        <div>
 
         <ul>
             
