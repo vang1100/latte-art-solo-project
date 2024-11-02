@@ -10,7 +10,7 @@ function Nav() {
   return (
     <div className="nav">
       <Link to="/home">
-        <h2 className="nav-title">{user.username}!</h2>
+        <h2 className="nav-title"></h2>
        
       </Link>
       <div>

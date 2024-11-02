@@ -1,3 +1,12 @@
+.container{
+  background-image: url('/Users/padeevang/Documents/kenai/Tier3/latte-meet-solo-project/coffee.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 80vh;
+ 
+}
+
 /* --------------------------------------------------------------------------------
 Grid
 -------------------------------------------------------------------------------- */
