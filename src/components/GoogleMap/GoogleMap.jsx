@@ -69,7 +69,10 @@ function GoogleMap(){
 
     return (
         <>
+        
             <APIProvider apiKey={'AIzaSyDgopZ8mN53DI30W1dnvoGV0-4SOUtl1XY'}>
+
+                {/* //tried to use process.env but it didn't work. using api key for now */}
      
                 <div className="align-item" style={{ height: '50vh', width: '100%' }}>
                     
