@@ -21,12 +21,14 @@ function EventListItem({event}){
       const formatTime = (timeString) => {
         const [hourString, minute] = timeString.split(':');
         const hour = parseInt(hourString, 10);
-        
+        // pareseIn treats the string as a decimal number
+          // parseInt(14, 10) will return 14
+
         let ampm = 'AM';
-        let formattedHour = hour;
+        let formattedHour = hour; // 
       
         if (hour > 12) {
-          formattedHour = hour - 12;
+          formattedHour = hour - 12; 
           ampm = 'PM';
         } else if (hour === 12) {
           ampm = 'PM';
@@ -37,7 +39,7 @@ function EventListItem({event}){
         return `${formattedHour}:${minute} ${ampm}`;
       };
 
-    const dispatch = useDispatch();
+   // console.log('parseIn test', parseInt(14, 10));
 
     return(
         <>

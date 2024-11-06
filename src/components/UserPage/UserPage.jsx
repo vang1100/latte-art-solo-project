@@ -9,8 +9,8 @@ function UserPage() {
   const user = useSelector((store) => store.user);
   return (
     <div className="container">
-      <h2>Hello {user.username}!</h2>
-      <p>Your ID is: {user.id}</p>
+      <h2>Hello, {user.username}!</h2>
+      
       <LogOutButton/>
       <Link to='/homepage'><Button variant="contained"
           sx={{

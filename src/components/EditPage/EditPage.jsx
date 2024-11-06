@@ -1,6 +1,6 @@
 import { useEffect, useState} from 'react';
 import { useSelector, useDispatch} from 'react-redux';
-import EventFormItem from '../EventFormItem/EvenFormtItem';
+import EventFormItem from '../EventFormItem/EventFormtItem';
 import HomeButton from '../../HomeButton/HomeButton';
 import Logo from '../../Logo/Logo';
 

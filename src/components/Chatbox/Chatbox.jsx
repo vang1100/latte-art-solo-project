@@ -21,16 +21,27 @@ function Chatbox(){
         const formatDate = (dateString) => {
             const date = new Date(dateString);
             return new Intl.DateTimeFormat('en-US', {
-              year: 'numeric',
-              month: 'long',
-              day: 'numeric',
+            // these options arguments will give more customization
+              year: 'numeric', // Display the year as a number (e.g., 2023)
+              month: 'long', // Display the full name of the month (e.g., "January")
+              day: 'numeric', // Display the day of the month as a number (e.g., 1)
             }).format(date);
           };
 
+        // new Intl.DateTimeFormat('en-US') creates a formatter object.
+          // will always need a specific locale and options.
+          // The constructor alone doesn't produce a formatted date string.
+          // will always need to call the .format()
+          
+        // .format() method actually performs the date formatting.
 
+
+        //   const testDate = new Date();
+        //   console.log('test date', testDate);
+        //   console.log(new Intl.DateTimeFormat('en-US').format(testDate));
     return(
 
-        <>
+        <div className="container1">
             <Logo/>
             <HomeButton/>
             
@@ -69,7 +80,7 @@ function Chatbox(){
             </Card>
 
         </div>
-</>
+</div>
        
     )
 }

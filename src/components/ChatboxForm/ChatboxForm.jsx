@@ -4,7 +4,7 @@ import axios from 'axios';
 import * as React from 'react';
 import TextField from '@mui/material/TextField';
 import { Button } from '@mui/material';
-import './Chatbox.css'
+import './ChatboxForm.css'
 
 function ChatboxForm(){
     const dispatch = useDispatch();
