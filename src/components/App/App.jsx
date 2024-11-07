@@ -23,7 +23,6 @@ import EditPage from '../EditPage/EditPage';
 import CreatePage from '../CreatePage/CreatePage';
 import HomePage from '../HomePage/HomePage';
 import GoogleMap from '../GoogleMap/GoogleMap';
-import MaterialUi from '../MaterialUI/M/MaterialUi';
 import Chatbox from '../Chatbox/Chatbox';
 import ThankYou from '../ThankYou/ThankYou';
 
@@ -98,11 +97,7 @@ function App() {
             <CreatePage/>
           </ProtectedRoute>
 
-          <ProtectedRoute
-            exact
-            path="/materialui">
-            <MaterialUi/>
-          </ProtectedRoute>
+          
 
           <ProtectedRoute
             exact
