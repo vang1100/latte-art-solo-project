@@ -17,19 +17,10 @@ function UserPage() {
       What can I help you with today? 
       <br/>
       <br/>
-        <Link to='/homepage'><Button variant="contained"
-            sx={{
-              backgroundColor: '#E9967A',
-              color: 'white',
-              '&:hover': {
-                backgroundColor: '#E8856A'
-              }
-            }}
-            onClick={() => {
-              history.push('/login');
-            }}>Home</Button></Link>
-      <br/>
-      <br/>
+            <LogOutButton/>
+            <br/>
+            <br/>
+           
             <Link to='/chatbox'><Button variant="contained"
             sx={{
               backgroundColor: '#E9967A',
@@ -38,9 +29,18 @@ function UserPage() {
                 backgroundColor: '#E8856A'
               }
             }}
-            onClick={() => {
-              history.push('/login');
-            }}>Chat</Button></Link>
+            >Chat</Button></Link>
+             <br/>
+             <br/>
+        <Link to='/homepage'><Button variant="contained"
+            sx={{
+              backgroundColor: '#E9967A',
+              color: 'white',
+              '&:hover': {
+                backgroundColor: '#E8856A'
+              }
+            }}
+            >Home</Button></Link>
               <br/>
       <br/>
             <Link to='/edit'><Button variant="contained"
@@ -51,9 +51,7 @@ function UserPage() {
                 backgroundColor: '#E8856A'
               }
             }}
-            onClick={() => {
-              history.push('/login');
-            }}>Edit events</Button></Link>
+            >Edit events</Button></Link>
               <br/>
       <br/>
             <Link to='/create'><Button variant="contained"
@@ -64,9 +62,8 @@ function UserPage() {
                 backgroundColor: '#E8856A'
               }
             }}
-            onClick={() => {
-              history.push('/login');
-            }}>Create events</Button></Link>
+            >Create events</Button></Link>
+
       
     </div>
   );
