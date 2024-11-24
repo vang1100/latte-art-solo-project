@@ -35,7 +35,7 @@ function ChatboxForm(){
         <div className="align-item">
         
          <form onSubmit={handleSubmit}>
-            
+            <br/>
             <TextField 
                 className="align-items"
                 id="outlined-basic" 
