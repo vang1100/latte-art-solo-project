@@ -4,8 +4,10 @@ import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { useDispatch } from 'react-redux';
-//import EditIcon from '@mui/icons-material/Edit';
+import { Edit } from '@mui/icons-material';
 import './EventListItem.css'
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
+
 
 
 function EventListItem({event}){
@@ -52,8 +54,18 @@ function EventListItem({event}){
                     sx={{ justifyContent: 'space-between', alignItems: 'center' }}>
                 
                         <Typography gutterBottom variant="h5" component="div">
-                            {event.event_name}
+                            
+                            {event.event_name} 
+                            
+                            <Link to='/edit'>
+                              
+                              <Edit sx={{ marginLeft: 'auto' }} />
+
+                            </Link>
+                            
                         </Typography>
+
+                       
                         
                         <Typography gutterBottom variant="h6" component="div">
                         
