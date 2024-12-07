@@ -13,7 +13,17 @@ function UserPage() {
     <div align="center">
       <Logo/>
       <h3>Hello, {user.username}!</h3>
-           
+      <Link to='/homepage'><Button variant="contained"
+            sx={{
+              backgroundColor: '#E9967A',
+              color: 'white',
+              '&:hover': {
+                backgroundColor: '#E8856A'
+              }
+            }}
+            >Home </Button></Link>
+          <br/>
+          <br/>
             <Link to='/chatbox'><Button variant="contained"
             sx={{
               backgroundColor: '#E9967A',
@@ -22,20 +32,10 @@ function UserPage() {
                 backgroundColor: '#E8856A'
               }
             }}
-            >Chat</Button></Link>
-             <br/>
-             <br/>
-        <Link to='/homepage'><Button variant="contained"
-            sx={{
-              backgroundColor: '#E9967A',
-              color: 'white',
-              '&:hover': {
-                backgroundColor: '#E8856A'
-              }
-            }}
-            >Events</Button></Link>
-              <br/>
-      <br/>
+            >Message Friends</Button></Link>
+             
+        <br/>
+        <br/>
             
       <LogOutButton/>
       

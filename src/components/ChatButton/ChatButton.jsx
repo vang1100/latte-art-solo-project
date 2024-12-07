@@ -20,7 +20,7 @@ function ChatButton(){
             backgroundColor: '#b89b88' // Slightly darker shade for hover effect
             }
         }}>
-        CHAT
+        Message Friends
         </Button> 
         
  </Link>     
