@@ -4,8 +4,9 @@ import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { useDispatch } from 'react-redux';
-// import DeleteIcon from '@mui/icons-material/Delete';
+//import EditIcon from '@mui/icons-material/Edit';
 import './EventListItem.css'
+
 
 function EventListItem({event}){
 

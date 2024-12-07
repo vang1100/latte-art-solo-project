@@ -13,7 +13,6 @@ function HomePage(){
             <ChatButton/>
             <HomePageButtons/>
             <Eventlist/>
-
            
         
         </div>
