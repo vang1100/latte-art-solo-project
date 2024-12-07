@@ -47,8 +47,8 @@ function EventListItem({event}){
     return(
         <>
           <li key={event.id} className="no-bullet">
-            <Card variant="outlined" sx={{ maxWidth: 460 }}>
-                <Box sx={{ p: 4 }}>
+            {/* <Card variant="outlined" sx={{ maxWidth: 460 }}>
+                <Box sx={{ p: 2 }}>
                     <Stack
                     direction="row"
                     sx={{ justifyContent: 'space-between', alignItems: 'center' }}>
@@ -56,12 +56,18 @@ function EventListItem({event}){
                         <Typography gutterBottom variant="h5" component="div">
                             
                             {event.event_name} 
-                            
-                            <Link to='/edit'>
-                              
-                              <Edit sx={{ marginLeft: 'auto' }} />
 
-                            </Link>
+                            <Typography gutterBottom variant="h6" component="div">
+                                
+                                <Link to='/edit'>
+                              
+                                    <Edit sx={{ marginLeft: 'auto' }} />
+
+                              </Link>
+                            
+                            </Typography>
+                            
+                            
                             
                         </Typography>
 
@@ -78,8 +84,33 @@ function EventListItem({event}){
                        {formatDate(event.date)} at {formatTime(event.time)}
                         </Typography>
                 </Box>   
-            </Card>
-        
+            </Card> */}
+            <Card variant="outlined" sx={{ maxWidth: 360 }}>
+      <Box sx={{ p: 2 }}>
+        <Stack
+          direction="row"
+          sx={{ justifyContent: 'space-between', alignItems: 'center' }}
+        >
+          <Typography gutterBottom variant="h5" component="div">
+             {event.event_name}
+          </Typography>
+          <Typography gutterBottom variant="h6" component="div">
+            <Link to='/edit'>
+                              
+                              <Edit sx={{ marginLeft: 'auto' }} />
+
+                        </Link>
+          </Typography>
+        </Stack>
+        <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+        {event.address} {event.city}, {event.state} {event.zip_code}
+        <br/>             
+        {formatDate(event.date)} at {formatTime(event.time)}
+        </Typography>
+      </Box>
+      
+    
+    </Card>
 
             </li>
                     
