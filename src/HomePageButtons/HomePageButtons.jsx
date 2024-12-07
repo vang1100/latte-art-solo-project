@@ -26,7 +26,7 @@ function HomePageButtons(){
 
     </Link>
         
-    <Link to='/edit'>
+    {/* <Link to='/edit'>
         
             <Button
              
@@ -47,7 +47,7 @@ function HomePageButtons(){
         
         
     
-</Link>
+</Link> */}
         </div>
 
     )

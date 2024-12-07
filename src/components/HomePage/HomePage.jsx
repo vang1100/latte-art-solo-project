@@ -10,10 +10,9 @@ function HomePage(){
         <div className="container1">
 
             <Logo/>
+            <Eventlist/>
             <ChatButton/>
             <HomePageButtons/>
-            <Eventlist/>
-           
         
         </div>
        

@@ -45,7 +45,7 @@ function Chatbox(){
             <Logo/>
             <HomeButton/>
             
-            <HomePageButtons/>
+            
             <br/>
             <ChatboxForm/>
 
