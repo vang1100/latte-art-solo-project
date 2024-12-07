@@ -46,7 +46,15 @@ const markers = [
         image:"groundswell.jpg",
         name: "Groundswell",
         description: "1340 Thomas Ave W, St Paul, MN 55104"
-    }
+    },
+     {
+        position: {lat: 44.950776462631694, lng: -92.9519452209083},
+        image:"e&b.jpg",
+        name:"Ember and Bean Roasting Co",
+        description: "7600 2nd St N Ste B, Oakdale, MN 55128",
+
+
+     }
     
     ];
 
