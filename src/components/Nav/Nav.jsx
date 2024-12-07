@@ -45,9 +45,7 @@ function Nav() {
               Create
             </Link>
 
-            {/* <Link className="navLink" to="/thankyou">
-            Technologies
-            </Link> */}
+        
              {/* <Link className="navLink" to="/map">
               Map
             </Link>  */}
