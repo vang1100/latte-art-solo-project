@@ -43,8 +43,8 @@ function Chatbox(){
 
         <div className="container1">
             <Logo/>
-        {/* <HomeButton/>
-             */}
+        <HomeButton/>
+             
             
             <br/>
             <ChatboxForm/>

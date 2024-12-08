@@ -115,7 +115,7 @@ function EditForm({event}){
                     backgroundColor: 'rgba(233, 150, 122, 0.04)'
                         }
                     }}>
-                        COMPLETE
+                        UPDATE
                 </Button>        
                 
                 <Button 
@@ -129,7 +129,7 @@ function EditForm({event}){
                     onClick={() => 
                         dispatch
                             ({type: 'DELETE_EVENT', payload: event.id})}>
-                            Delete
+                            REMOVE
                 </Button>
             
             </form>

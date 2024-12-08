@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import './LandingPage.css';
 import {Button} from '@mui/material';
+import Logo from '../../Logo/Logo';
 
 // CUSTOM COMPONENTS
 import RegisterForm from '../RegisterForm/RegisterForm';
@@ -16,12 +17,10 @@ function LandingPage() {
 
   return (
     <div className="container">
-      <h2>L A T T E . M E E T</h2>
-
-      <div className="grid">
-        <div className="grid-col grid-col_8">
-        </div>
-        <div className="grid-col grid-col_4">
+          <Logo/>
+     
+     <br/>
+    
           <RegisterForm />
 
           <center>
@@ -44,8 +43,7 @@ function LandingPage() {
 
            
           </center>
-        </div>
-      </div>
+       
     </div>
   );
 }
