@@ -43,16 +43,18 @@ function Chatbox(){
 
         <div className="container1">
             <Logo/>
-            <HomeButton/>
+        {/* <HomeButton/>
+             */}
             
-            <HomePageButtons/>
             <br/>
             <ChatboxForm/>
 
             <br/>
 
-            <div className="align-item">
+            <p align="center">Messages</p>
 
+            <div className="align-item">
+            
             <Card variant="outlined" sx={{ maxWidth: 460 }}>
 
                 <Box sx={{ p: 2 }}>

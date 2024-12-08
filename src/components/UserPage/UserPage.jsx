@@ -12,15 +12,18 @@ function UserPage() {
   return (
     <div align="center">
       <Logo/>
-      <h2>Hello, {user.username}!</h2>
-
-      What can I help you with today? 
-      <br/>
-      <br/>
-            <LogOutButton/>
-            <br/>
-            <br/>
-           
+      <h3>Hello, {user.username}!</h3>
+      <Link to='/homepage'><Button variant="contained"
+            sx={{
+              backgroundColor: '#E9967A',
+              color: 'white',
+              '&:hover': {
+                backgroundColor: '#E8856A'
+              }
+            }}
+            >Home </Button></Link>
+          <br/>
+          <br/>
             <Link to='/chatbox'><Button variant="contained"
             sx={{
               backgroundColor: '#E9967A',
@@ -29,41 +32,12 @@ function UserPage() {
                 backgroundColor: '#E8856A'
               }
             }}
-            >Chat</Button></Link>
-             <br/>
-             <br/>
-        <Link to='/homepage'><Button variant="contained"
-            sx={{
-              backgroundColor: '#E9967A',
-              color: 'white',
-              '&:hover': {
-                backgroundColor: '#E8856A'
-              }
-            }}
-            >Home</Button></Link>
-              <br/>
-      <br/>
-            <Link to='/edit'><Button variant="contained"
-            sx={{
-              backgroundColor: '#E9967A',
-              color: 'white',
-              '&:hover': {
-                backgroundColor: '#E8856A'
-              }
-            }}
-            >Edit events</Button></Link>
-              <br/>
-      <br/>
-            <Link to='/create'><Button variant="contained"
-            sx={{
-              backgroundColor: '#E9967A',
-              color: 'white',
-              '&:hover': {
-                backgroundColor: '#E8856A'
-              }
-            }}
-            >Create events</Button></Link>
-
+            >Message Friends</Button></Link>
+             
+        <br/>
+        <br/>
+            
+      <LogOutButton/>
       
     </div>
   );

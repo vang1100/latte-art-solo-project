@@ -4,8 +4,11 @@ import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { useDispatch } from 'react-redux';
-// import DeleteIcon from '@mui/icons-material/Delete';
+import { Edit } from '@mui/icons-material';
 import './EventListItem.css'
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
+
+
 
 function EventListItem({event}){
 
@@ -44,15 +47,31 @@ function EventListItem({event}){
     return(
         <>
           <li key={event.id} className="no-bullet">
-            <Card variant="outlined" sx={{ maxWidth: 460 }}>
-                <Box sx={{ p: 4 }}>
+            {/* <Card variant="outlined" sx={{ maxWidth: 460 }}>
+                <Box sx={{ p: 2 }}>
                     <Stack
                     direction="row"
                     sx={{ justifyContent: 'space-between', alignItems: 'center' }}>
                 
                         <Typography gutterBottom variant="h5" component="div">
-                            {event.event_name}
+                            
+                            {event.event_name} 
+
+                            <Typography gutterBottom variant="h6" component="div">
+                                
+                                <Link to='/edit'>
+                              
+                                    <Edit sx={{ marginLeft: 'auto' }} />
+
+                              </Link>
+                            
+                            </Typography>
+                            
+                            
+                            
                         </Typography>
+
+                       
                         
                         <Typography gutterBottom variant="h6" component="div">
                         
@@ -65,8 +84,33 @@ function EventListItem({event}){
                        {formatDate(event.date)} at {formatTime(event.time)}
                         </Typography>
                 </Box>   
-            </Card>
-        
+            </Card> */}
+            <Card variant="outlined" sx={{ maxWidth: 360 }}>
+      <Box sx={{ p: 2 }}>
+        <Stack
+          direction="row"
+          sx={{ justifyContent: 'space-between', alignItems: 'center' }}
+        >
+          <Typography gutterBottom variant="h5" component="div">
+             {event.event_name}
+          </Typography>
+          <Typography gutterBottom variant="h6" component="div">
+            <Link to='/edit'>
+                              
+                              <Edit sx={{ marginLeft: 'auto' }} />
+
+                        </Link>
+          </Typography>
+        </Stack>
+        <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+        {event.address} {event.city}, {event.state} {event.zip_code}
+        <br/>             
+        {formatDate(event.date)} at {formatTime(event.time)}
+        </Typography>
+      </Box>
+      
+    
+    </Card>
 
             </li>
                     

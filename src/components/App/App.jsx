@@ -24,7 +24,7 @@ import CreatePage from '../CreatePage/CreatePage';
 import HomePage from '../HomePage/HomePage';
 import GoogleMap from '../GoogleMap/GoogleMap';
 import Chatbox from '../Chatbox/Chatbox';
-import ThankYou from '../ThankYou/ThankYou';
+
 
 import './App.css';
 import { END } from 'redux-saga';
@@ -105,12 +105,6 @@ function App() {
             <GoogleMap/>
           </ProtectedRoute>
           
-          <ProtectedRoute
-            exact
-            path="/thankyou">
-            <ThankYou/>
-          </ProtectedRoute>
-
           <Route
             exact
             path="/login"

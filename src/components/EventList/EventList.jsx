@@ -17,6 +17,8 @@ function Eventlist(){
         <>
         <div>
 
+            <h1 align="center">Upcoming Events</h1>
+
         <ul>
             
             {event.map((event) => 
