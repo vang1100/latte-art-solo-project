@@ -35,7 +35,7 @@ function Nav() {
             </Link>
 
             <Link className="navLink" to="/chatbox">
-              Chat
+              Message
             </Link> 
 
             <Link className="navLink" to="/edit">
@@ -54,8 +54,6 @@ function Nav() {
             Logout
 
           </Link>
-        
-      
           </>
         )}
 
